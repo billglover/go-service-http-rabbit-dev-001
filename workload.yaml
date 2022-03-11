@@ -1,0 +1,14 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: go-service-http-rabbit-dev-001
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/has-tests: true
+    app.kubernetes.io/part-of: go-service-http-rabbit-dev-001
+spec:
+  source:
+    git:
+      url: https://github.com/billglover/go-service-http-rabbit-dev-001
+      ref:
+        branch: main
