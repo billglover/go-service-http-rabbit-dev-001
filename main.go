@@ -27,10 +27,14 @@ func run(log *log.Logger) error {
 	}
 
 	b := bindings.FromServiceBindingRoot()
+	fmt.Printf("%+v\n", b)
+
 	b = bindings.Filter(b, "rmq")
-	if len(b) != 1 {
-		return fmt.Errorf("incorrect number of RabbitMQ bindings: %d", len(b))
-	}
+	fmt.Printf("%+v\n", b)
+
+	// if len(b) != 1 {
+	// 	return fmt.Errorf("incorrect number of RabbitMQ bindings: %d", len(b))
+	// }
 
 	u, ok := bindings.Get(b[0], "url")
 	if !ok {
