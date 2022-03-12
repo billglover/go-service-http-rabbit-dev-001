@@ -36,12 +36,12 @@ func run(log *log.Logger) error {
 	// 	return fmt.Errorf("incorrect number of RabbitMQ bindings: %d", len(b))
 	// }
 
-	u, ok := bindings.Get(b[0], "url")
-	if !ok {
-		return fmt.Errorf("no URL in binding")
-	}
+	// u, ok := bindings.Get(b[0], "url")
+	// if !ok {
+	// 	return fmt.Errorf("no URL in binding")
+	// }
 
-	fmt.Printf("%+v", b)
+	fmt.Println("SERVICE_BINDING_ROOT: ", os.Getenv("SERVICE_BINDING_ROOT"))
 
 	r := chi.NewRouter()
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
