@@ -46,7 +46,6 @@ func run(log *log.Logger) error {
 	r := chi.NewRouter()
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Something worked, don't ask how."))
-		w.Write([]byte("Trying to bind to:" + u))
 	})
 
 	err := http.ListenAndServe(":"+port, r)
